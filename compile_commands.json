@@ -1,0 +1,72 @@
+[
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/append_record.c.o   -c /home/akalanka/projects/cddb/src/append_record.c",
+  "file": "/home/akalanka/projects/cddb/src/append_record.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/base_utils.c.o   -c /home/akalanka/projects/cddb/src/base_utils.c",
+  "file": "/home/akalanka/projects/cddb/src/base_utils.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/create_record.c.o   -c /home/akalanka/projects/cddb/src/create_record.c",
+  "file": "/home/akalanka/projects/cddb/src/create_record.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/delete_record.c.o   -c /home/akalanka/projects/cddb/src/delete_record.c",
+  "file": "/home/akalanka/projects/cddb/src/delete_record.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/file_io.c.o   -c /home/akalanka/projects/cddb/src/file_io.c",
+  "file": "/home/akalanka/projects/cddb/src/file_io.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/input.c.o   -c /home/akalanka/projects/cddb/src/input.c",
+  "file": "/home/akalanka/projects/cddb/src/input.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/main.c.o   -c /home/akalanka/projects/cddb/src/main.c",
+  "file": "/home/akalanka/projects/cddb/src/main.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/options.c.o   -c /home/akalanka/projects/cddb/src/options.c",
+  "file": "/home/akalanka/projects/cddb/src/options.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/output.c.o   -c /home/akalanka/projects/cddb/src/output.c",
+  "file": "/home/akalanka/projects/cddb/src/output.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/path_utils.c.o   -c /home/akalanka/projects/cddb/src/path_utils.c",
+  "file": "/home/akalanka/projects/cddb/src/path_utils.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/save_record_as.c.o   -c /home/akalanka/projects/cddb/src/save_record_as.c",
+  "file": "/home/akalanka/projects/cddb/src/save_record_as.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/str_utils.c.o   -c /home/akalanka/projects/cddb/src/str_utils.c",
+  "file": "/home/akalanka/projects/cddb/src/str_utils.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/view_entry.c.o   -c /home/akalanka/projects/cddb/src/view_entry.c",
+  "file": "/home/akalanka/projects/cddb/src/view_entry.c"
+},
+{
+  "directory": "/home/akalanka/projects/cddb/build",
+  "command": "/usr/bin/cc  -I/home/akalanka/projects/cddb/include    -o CMakeFiles/cddb.dir/src/view_record.c.o   -c /home/akalanka/projects/cddb/src/view_record.c",
+  "file": "/home/akalanka/projects/cddb/src/view_record.c"
+}
+]

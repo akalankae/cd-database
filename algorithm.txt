@@ -1,0 +1,250 @@
+## algorithm.txt
+##
+## Outline of CD database program in pseudo code.
+## Each numbered heading is an option from main menu.
+##
+##
+##
+## Main program will display a menu with a list of options from which user can
+## select ONE.
+## This will invoke the function relevant to the users selection.
+##
+
+#############################################################################
+##                                                                          #
+##                              main                                        #
+##                                                                          #
+#############################################################################
+    ~Start
+    READ user_preference
+    WHILE user_preference != QUIT
+        CALL relavent function 
+        READ user_preference
+    ENDWHILE
+    DISPLAY exit_msg
+    ~End
+
+
+
+#############################################################################
+##                                                                          #
+##                              create_record()                             #
+##                                                                          #
+#############################################################################
+    ~Start
+    record_name = read_str(prompt)
+    WHILE record_exists(record_name)
+      record_name = read_str(prompt)
+    ENDWHILE
+    num_cds = read_int(prompt)
+    open newfile 'record' for writing
+    WHILE num_cds have NOT been entered
+      read_cd(cd)
+      write_cd_to_file(cd, newfile)
+    ENDWHILE
+    close file 'record'
+    ~End
+
+# Required functions:
+    read_str()
+    record_exists()
+    read_int()
+    read_cd()
+    write_cd_to_file()
+
+#############################################################################
+##                                                                          #
+##                          delete_record()                                 #
+##                                                                          #
+#############################################################################
+    ~Start
+    work_dir = getcwd()
+    print_records(work_dir)
+    record_number = read_option_num(prompt, #1, #total, errmsg)
+    get record from record_number
+    print_cd_titles(record)
+    prompt to proceed with deletion
+    delete record
+    ~End
+
+# Required functions:
+    print_records()
+    read_option_num()
+    print_cd_titles()
+    del_record()
+
+#############################################################################
+##                                                                          #
+##                              view_record()                               #
+##                                                                          #
+#############################################################################
+# Algorithm:
+    ~Start
+    work_dir = getcwd()
+    print_records(work_dir)
+    record_number = read_option_num(prompt, #1, #total, errmsg)
+    get record from record_number
+    open file 'record' for reading
+    WHILE not at end-of-file
+      read_cd_from_file(cd, file)
+      print_cd(cd)
+    ENDWHILE
+    close file 'record'
+    ~End
+
+# Required functions
+    print_records()
+    read_option_num()
+    read_cd_from_file()
+    print_cd()
+
+#############################################################################
+##                                                                          #
+##                              view_entry()                                #
+##                                                                          #
+#############################################################################
+    ~Start
+    work_dir = getcwd()
+    print_records(work_dir)
+    record_number = read_option_num(prompt, #1, #total, errmsg)
+    get record from record_number
+    open file 'record' for reading
+    print_cd_titles(record)
+    cd_number = read_option_num(prompt, #1, #total, errmsg)
+    read_nth_cd_from_file(cd, file, cd_number)
+    print_cd(cd)
+    close file 'record'
+    ~End
+
+# Required functions:
+    print_records()
+    read_option_num()
+    print_cd_titles()
+    read_nth_cd_from_file()
+    print_cd()
+
+#############################################################################
+##                                                                          #
+##                          save_record_as()                                #
+##                                                                          #
+#############################################################################
+    ~Start
+    work_dir = getcwd()
+    print_records(work_dir)
+    record_number = read_option_num(prompt, #1, #total, errmsg)
+    get record from record_number
+    new_record_name = read_str(prompt)
+    WHILE NOT record_exists(new_record_name)
+      new_record_name = read_str(prompt)
+    ENDWHILE
+    open file 'record' for reading
+    open file 'new_record' for writing
+    WHILE NOT at end-of-file
+      read_cd_from_file(cd, record)
+      write_cd_to_file(cd, new_record)
+    ENDWHILE
+    close 2 files
+    ~End
+
+# Required functions:
+    print_records()
+    read_option_num()
+    read_str()
+    record_exists()
+    read_cd_from_file()
+    write_cd_to_file()
+
+#############################################################################
+##                                                                          #
+##                            append_record()                               #
+##                                                                          #
+#############################################################################
+    ~Start
+    work_dir = getcwd()
+    print_records(work_dir)
+    record_number = read_option_num(prompt, #1, #total, errmsg)
+    get record from record_number
+    open file 'record' for reading and appending
+    print_cd_titles(record)
+    num_cds = read_int(prompt)
+    WHILE num_cds have NOT been entered
+      read_cd(cd)
+      write_cd_to_file(cd, newfile)
+    ENDWHILE
+    close file 'record'
+    ~End
+
+# Required functions:
+    print_records()
+    read_option_num()
+    print_cd_titles()
+    read_int()
+    read_cd()
+    write_cd_to_file()
+
+
+
+#############################################################################
+#                                                                           #
+#                           Helper Functions                                #
+#                                                                           #
+#############################################################################
+
+# print_records(dir_path)
+# -----------------------
+1. dir = open_dir(dir_path)
+2. WHILE dir is NOT EMPTY
+     file = read_next_file(dir)
+     IF file is a directory
+         print_records(file)
+     ELSE IF file.name endswith ".dat"
+         print(file.name)
+     ENDIF
+   ENDWHILE
+3. close_dir(dir)
+
+# del_record(record_name)
+# -----------------------
+## no need to create a separate function for this as C standard library
+## already has a "remove()" function that does just this.
+
+1. Verify record_name exists
+2. Print titles of CDs in record
+3. Prompt again to confirm deletion
+4. Delete record_name
+5. Report success/failure to caller
+
+# read_num_option(prompt, opt_min, opt_max, err_msg)
+# --------------------------------------------------
+1. display prompt
+2. option = read_option()
+3. WHILE option < opt_min OR option > opt_max
+     display err_msg
+     display prompt
+     option = read_option()
+   ENDWHILE
+4. return option
+
+# copy_cd(cd, from_file, to_file)
+# -------------------------------
+# This function will copy a CD sized block starting from current cursor 
+# position from "from_file" to "to_file", using cd (block in memory).
+
+1. Verify validity of cd, from and to files. If error report back
+2. Read CD sized block from `from_file` to `cd`
+3. Write `cd` to `to_file`
+4. Return success/failure status
+
+# read_nth_cd_from_file(cd, file, N)
+# ----------------------------------
+# This function will copy a CD sized block from file. The copied block
+# will be the Nth cd in file.
+
+1. Get the size of a CD block in bytes
+2. Remember current cursor position in file.
+3. Calculate where the cursor needs to be to start reading;
+     start + (N - 1) * size_of_a_CD_in_bytes
+4. Jump to required position
+5. Read CD sized block from file.
+6. Jump back to previous cursor position
+7. Report success/failure
